@@ -16,15 +16,6 @@
     <!-- Background Canvas for Snow/Ice Particles -->
     <canvas id="snow-canvas"></canvas>
 
-    <!-- Floating Cone Decoration -->
-    <div class="floating-cone" id="floating-cone">
-        <div class="cone-wrapper">
-            <div class="cone-body"></div>
-            <div class="cone-drip"></div>
-            <div class="cone-drip2"></div>
-        </div>
-    </div>
-
     <div class="app">
         <!-- Hero Section -->
         <header class="hero">
@@ -33,7 +24,6 @@
                 <ul class="nav-links">
                     <li><a href="#sabores">Sabores</a></li>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
 
@@ -59,7 +49,9 @@
             <div class="flavors-grid">
                 <div class="flavor-card" data-flavor="leite-ninho">
                     <div class="flavor-card-inner">
-                        <div class="flavor-emoji">🥛</div>
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 7c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 3c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm6.5-5.5c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5h7c.83 0 1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5h-7zM12 4c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 5.5c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/>
+                        </svg>
                         <h3 class="flavor-name">Leite Ninho</h3>
                         <div class="flavor-shimmer"></div>
                     </div>
@@ -67,7 +59,9 @@
                 </div>
                 <div class="flavor-card" data-flavor="tapioca">
                     <div class="flavor-card-inner">
-                        <div class="flavor-emoji">🧁</div>
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 2c-3.3 0-6 2.7-6 6s2.7 6 6 6h4c3.3 0 6-2.7 6-6s-2.7-6-6-6h-2c0-3.7 2.3-7 5-7s5 3.3 5 7h-2c0-1.7-.7-3.2-2-4.2v1.5c0 .3.1.5.1.8l2.5 1.5c.1.1.3.2.5.2s.4 0 .5-.1l1.5-2.5c.3-.2.4-.5.4-.8s-.1-.5-.4-.7h-2.5c-.1.3-.3.5-.5.4l-1.5 2.5c-.2.1-.5.2-.7.2s-.5 0-.7-.1l-2.5-1.5c-.3-.2-.5-.3-.7-.4v-1.5c0-3.5 1.6-5.4 5-5s5 1.5 5 5v2c0 1.6 1.3 3 3 3s3-1.4 3-3v-2c0-.6-.2-1.2-.5-1.7l1.5-2.5c.1-.3.1-.6.1-.9s0-.6-.1-.9l-1.5 2.5c-.2.1-.5.2-.7.3v2c0 1.3-.9 2.5-2 3s-2.1.9-3 .9h5c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5h-2.5c-.1-.6-.3-1.1-.5-1.5l1.5-2.5c.1-.3.1-.5.1-.8v-1.5c0-1.5-1.4-2.7-3-2.7s-3 1.2-3 2.7v1.5c0 .3-.1.5-.1.8l-2.5 1.5c-.1.1-.3.2-.5.2s-.4 0-.5-.1l-1.5-2.5c-.3-.2-.5-.3-.7-.4h2.5c.1-.3.3-.5.5-.4l1.5-2.5c-.1-.3-.1-.5-.1-.9l2-1.5c-.2-.2-.5-.3-.7-.4v2c0 3.5-1.6 5-5 5s-5-1.5-5-5v-2c0-1.6-1.3-3-3-3s-3 1.4-3 3v2zm-5.5 7c-.55 0-1-.2-1.4-.5l1.5-2.5c.1-.3.1-.5.1-.8v-1.5c0-1.5-1.4-2.7-3-2.7s-3 1.2-3 2.7v1.5c0 .3-.1.5-.1.8l1.5 2.5c-.1.3-.1.5-.1.8v2c0 1.5 1.4 2.7 3 2.7s3-1.2 3-2.7v-1.5z"/>
+                        </svg>
                         <h3 class="flavor-name">Tapioca</h3>
                         <div class="flavor-shimmer"></div>
                     </div>
@@ -75,7 +69,9 @@
                 </div>
                 <div class="flavor-card" data-flavor="chocolate">
                     <div class="flavor-card-inner">
-                        <div class="flavor-emoji">🍫</div>
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10 8H7c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2zm4 4c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm2-7c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2zm4 4c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm2-7h-2c-1.1 0-2 .9-2 2v2c0 .7.3 1.3.8 1.6l3 3L17 7c.2 0 .4 0 .5 0l2-2c.5-.5.5-1.3 0-1.8z"/>
+                        </svg>
                         <h3 class="flavor-name">Chocolate</h3>
                         <div class="flavor-shimmer"></div>
                     </div>
@@ -83,23 +79,29 @@
                 </div>
                 <div class="flavor-card" data-flavor="morango">
                     <div class="flavor-card-inner">
-                        <div class="flavor-emoji">🍓</div>
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.02L12 2z"/>
+                        </svg>
                         <h3 class="flavor-name">Morango</h3>
                         <div class="flavor-shimmer"></div>
                     </div>
                     <div class="flavor-price">R$ 4,00</div>
                 </div>
-                <div class="flavor-card" data-flavor="maracaju">
+                <div class="flavor-card" data-flavor="maracujá">
                     <div class="flavor-card-inner">
-                        <div class="flavor-emoji">🍹</div>
-                        <h3 class="flavor-name">Maracaju</h3>
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 3l5 8.11L19 12l-5 4.91 1.89 7L12 21l-6.9-1.21L5 12l1.89-7L3 12l5-4.91L12 3z"/>
+                        </svg>
+                        <h3 class="flavor-name">Maracujá</h3>
                         <div class="flavor-shimmer"></div>
                     </div>
                     <div class="flavor-price">R$ 4,00</div>
                 </div>
                 <div class="flavor-card" data-flavor="abacate">
                     <div class="flavor-card-inner">
-                        <div class="flavor-emoji">🥑</div>
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M1 21h4v2H1c-1.1 0-2-.9-2-2v-1c0-.5.2-1 .5-1h5c.9 0 1.6.7 1.8 1.4L16 19c-.1.9-.6 1.7-1.5.8L10 21H4c-.5 0-1-.4-1-1v-2zm20.4-9h-4.8c-.8 0-1.5.3-2.1.8l-1.3 2.5h6.4c.8 0 1.5.3 2.1.8l1.3-2.5c-.6-.8-1.3-1.4-2.1-.8L23 12zm-6.8 5.6c-.3-.14-.7-.23-1.1-.23-.7 0-1.4.13-2.1.3l-1.2-2.3c-.3-.58-1.2-1.07-2.2-1.07-2.2 0-3.5 1.7-3.5 3.8v1.9c0 2.2 1.6 3.8 3.6 3.8.9 0 1.8-.13 2.5-.36l1.7 3.2c.27.51.76 1.04 1.43 1.26.67.23 1.4.1 2.1-.1.7-.2 1.3-.4 1.8-.7l2-3.5c.34-.6.55-1.3.7-2.02z"/>
+                        </svg>
                         <h3 class="flavor-name">Abacate</h3>
                         <div class="flavor-shimmer"></div>
                     </div>
@@ -107,8 +109,20 @@
                 </div>
                 <div class="flavor-card" data-flavor="abacaxi">
                     <div class="flavor-card-inner">
-                        <div class="flavor-emoji">🍍</div>
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12h8c5.55 0 9-4.45 9-10V5l-9-4zM12 3L2 9v6l3 3v6l3-3v6l-3 3v6l-2.77-2.77L12 23l5.77-5.77L12 3z"/>
+                        </svg>
                         <h3 class="flavor-name">Abacaxi</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+                <div class="flavor-card" data-flavor="coco">
+                    <div class="flavor-card-inner">
+                        <svg class="flavor-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4.17l2.1 3.07.78 1.55.07.15-2.83-1.08-1.18-2.67.63-2.85L12 2l-1.05.03-.63 2.85.63 2.67-1.18 2.67-.07.15.78 1.55L12 4.17zm0 5.83l2.03 3.42.45 1.08.05.11-2.52-1.02-1.02-2.52.05-.11.45-1.08.03.05 2.52 1.02 1.02 2.52-.05.11-.45 1.08-.03.05-2.52 1.02-1.02 2.52zM4.93 9.58l1.87 3.12a1 1 0 0 0 .7 1.21l1.38 2.08c.4 0 .7-.1 1-.3l1.52-2.38.02-.05c.36-.57.56-1.21.56-1.93s-.2-1.36-.56-1.93l-1.52 2.38c-.3 0-.7.1-1 .3l-1.38-2.08a1 1 0 0 0-.7 1.21L4.93 9.58zM12 15.83l2.85.78 1.55.47.15.07-2.67.63-2.83 1.08-1.18 2.85L12 22l1.05-.03.63-2.85-.63-2.67L12 15.83zM15.83 12l.78-2.83 1.08-1.18 2.85-1.08 1.18 2.67-.78 2.03-.05.11-1.08.45-.05.11-2.52 1.02 1.02 2.52zM12 9.17l-2.85-.78-1.55-.47-.15-.07 2.67-.63 2.83-1.08 1.18-2.85L12 2l-1.05.03-.63 2.85.63 2.67L12 9.17zM9.17 12l-.78 2.83-1.08 1.18-2.85 1.08-1.18-2.67.78 2.03.05.11 1.08.45.05.11 2.52-1.02-1.02-2.52zM4.93 14.42l-1.87-3.12a1 1 0 0 0-.7-1.21l-1.38-2.08c-.4 0-.7.1-1 .3l-1.52 2.38-.02.05c-.36.57-.56 1.21-.56 1.93s.2 1.36.56 1.93l1.52-2.38c.3 0 .7-.1 1-.3l1.38 2.08a1 1 0 0 0 .7-1.21L4.93 14.42z"/>
+                        </svg>
+                        <h3 class="flavor-name">Coco</h3>
                         <div class="flavor-shimmer"></div>
                     </div>
                     <div class="flavor-price">R$ 4,00</div>
@@ -159,21 +173,6 @@
                     <div class="step-number">3</div>
                     <h3>Aproveite!</h3>
                     <p>Receba e saboreie seu Chopp Gourmet gelado</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section contact-section" id="contato">
-            <h2 class="section-title">Fale Conosco</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-qrcode"></i>
-                    <p><strong>Chave Pix:</strong> 582cc87e-5ebd-4373-a851-f1c04d17c5ee</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Entrega na sua região</p>
                 </div>
             </div>
         </section>
