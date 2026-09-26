@@ -193,13 +193,6 @@ class ConeAnimation {
 
     init() {
         if (!this.cone) return;
-
-        // Add slight random drift to the floating cone
-        setInterval(() => {
-            const driftX = (Math.random() - 0.5) * 30;
-            const driftY = (Math.random() - 0.5) * 20;
-            this.cone.style.transform = `translate(${driftX}px, ${driftY}px)`;
-        }, 3000);
     }
 }
 
