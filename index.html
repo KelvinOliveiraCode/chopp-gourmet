@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chopp Gourmet — O Doce da Vida Gelado</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2=Lobster&family=Nunito:wght@300;400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9e9b1a6e3f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Snow/Ice Particles -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- Floating Cone Decoration -->
+    <div class="floating-cone" id="floating-cone">
+        <div class="cone-wrapper">
+            <div class="cone-body"></div>
+            <div class="cone-drip"></div>
+            <div class="cone-drip2"></div>
+        </div>
+    </div>
+
+    <div class="app">
+        <!-- Hero Section -->
+        <header class="hero">
+            <nav class="navbar">
+                <div class="logo">🍦 Chopp Gourmet</div>
+                <ul class="nav-links">
+                    <li><a href="#sabores">Sabores</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="hero-content">
+                <h1 class="hero-title" id="hero-title">
+                    <span class="title-word">Chopp</span>
+                    <span class="title-word">Gourmet</span>
+                    <span class="title-word">Gelado</span>
+                </h1>
+                <p class="hero-subtitle">O doce da vida em versão congelada! 🧊✨</p>
+                <div class="hero-price-badge">R$ <span class="big-price">4,00</span> por unidade</div>
+                <button class="cta-button" id="open-modal">
+                    <span class="btn-text">Comprar Agora</span>
+                    <span class="btn-icon"><i class="fas fa-bolt"></i></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Flavors Section -->
+        <section class="section flavors-section" id="sabores">
+            <h2 class="section-title">Nossos Sabores</h2>
+            <p class="section-subtitle">Cada colherada é uma explosão de sabor!</p>
+            <div class="flavors-grid">
+                <div class="flavor-card" data-flavor="leite-ninho">
+                    <div class="flavor-card-inner">
+                        <div class="flavor-emoji">🥛</div>
+                        <h3 class="flavor-name">Leite Ninho</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+                <div class="flavor-card" data-flavor="tapioca">
+                    <div class="flavor-card-inner">
+                        <div class="flavor-emoji">🧁</div>
+                        <h3 class="flavor-name">Tapioca</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+                <div class="flavor-card" data-flavor="chocolate">
+                    <div class="flavor-card-inner">
+                        <div class="flavor-emoji">🍫</div>
+                        <h3 class="flavor-name">Chocolate</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+                <div class="flavor-card" data-flavor="morango">
+                    <div class="flavor-card-inner">
+                        <div class="flavor-emoji">🍓</div>
+                        <h3 class="flavor-name">Morango</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+                <div class="flavor-card" data-flavor="maracaju">
+                    <div class="flavor-card-inner">
+                        <div class="flavor-emoji">🍹</div>
+                        <h3 class="flavor-name">Maracaju</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+                <div class="flavor-card" data-flavor="abacate">
+                    <div class="flavor-card-inner">
+                        <div class="flavor-emoji">🥑</div>
+                        <h3 class="flavor-name">Abacate</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+                <div class="flavor-card" data-flavor="abacaxi">
+                    <div class="flavor-card-inner">
+                        <div class="flavor-emoji">🍍</div>
+                        <h3 class="flavor-name">Abacaxi</h3>
+                        <div class="flavor-shimmer"></div>
+                    </div>
+                    <div class="flavor-price">R$ 4,00</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="sobre">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>O que é Chopp Gourmet?</h2>
+                    <p>O Chopp Gourmet é um <strong>chopp gelado em forma de bolsa</strong> com <strong>côncavo de chocolate</strong>, uma combinação única e deliciosa que mistura a cremosidade do chopp com o crocante do chocolate. Perfeito para qualquer momento!</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-snowflake"></i> Produto 100% gelado e cremoso</li>
+                        <li><i class="fas fa-leaf"></i> Ingredientes selecionados</li>
+                        <li><i class="fas fa-bolt"></i> Entrega rápida</li>
+                        <li><i class="fas fa-star"></i> Sabor que derrete na boca</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="cone-illustration">
+                        <div class="cone-body-big"></div>
+                        <div class="cone-drip-big"></div>
+                        <div class="cone-drip2-big"></div>
+                        <div class="ice-cream-scoop"></div>
+                        <div class="ice-cream-scoop2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Order Section -->
+        <section class="section how-section">
+            <h2 class="section-title">Como Comprar?</h2>
+            <div class="how-steps">
+                <div class="how-step">
+                    <div class="step-number">1</div>
+                    <h3>Clique em "Comprar"</h3>
+                    <p>Escolha o botão de compra no topo da página</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-number">2</div>
+                    <h3>Pague via Pix</h3>
+                    <p>Escaneie o QR Code ou use a chave aleatória</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-number">3</div>
+                    <h3>Aproveite!</h3>
+                    <p>Receba e saboreie seu Chopp Gourmet gelado</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contato">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-qrcode"></i>
+                    <p><strong>Chave Pix:</strong> 582cc87e-5ebd-4373-a851-f1c04d17c5ee</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Entrega na sua região</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 Chopp Gourmet — Todos os direitos reservados. <span class="heart">❤️</span></p>
+        </footer>
+    </div>
+
+    <!-- Pix Modal -->
+    <div class="modal-overlay" id="pix-modal">
+        <div class="modal" id="modal-content">
+            <div class="modal-header">
+                <h3>Pague via Pix</h3>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Chave Pix:</strong></p>
+                <p class="pix-key">582cc87e-5ebd-4373-a851-f1c04d17c5ee</p>
+                <div class="qr-code-container">
+                    <img src="https://api.qrserver.com/v1/api-qr-code/?data=582cc87e-5ebd-4373-a851-f1c04d17c5ee&size=200x200&color=000000&bgcolor=FFFFFF" alt="QR Code Pix" class="qr-code">
+                    <p class="qr-label">Escaneie para pagar</p>
+                </div>
+                <p class="modal-footer-note">R$ 4,00 — Valor por unidade</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
