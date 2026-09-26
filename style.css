@@ -308,24 +308,26 @@ body {
     transform: scale(1.1);
 }
 
-.flavor-emoji {
-    font-size: 50px;
+.flavor-svg {
+    width: 64px;
+    height: 64px;
     margin-bottom: 15px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
     animation: float 3s ease-in-out infinite;
 }
 
-.flavor-card:nth-child(1) .flavor-emoji { animation-delay: 0s; }
-.flavor-card:nth-child(2) .flavor-emoji { animation-delay: 0.2s; }
-.flavor-card:nth-child(3) .flavor-emoji { animation-delay: 0.4s; }
-.flavor-card:nth-child(4) .flavor-emoji { animation-delay: 0.6s; }
-.flavor-card:nth-child(5) .flavor-emoji { animation-delay: 0.8s; }
-.flavor-card:nth-child(6) .flavor-emoji { animation-delay: 1s; }
-.flavor-card:nth-child(7) .flavor-emoji { animation-delay: 1.2s; }
+.flavor-card:nth-child(1) .flavor-svg { animation-delay: 0s; }
+.flavor-card:nth-child(2) .flavor-svg { animation-delay: 0.2s; }
+.flavor-card:nth-child(3) .flavor-svg { animation-delay: 0.4s; }
+.flavor-card:nth-child(4) .flavor-svg { animation-delay: 0.6s; }
+.flavor-card:nth-child(5) .flavor-svg { animation-delay: 0.8s; }
+.flavor-card:nth-child(6) .flavor-svg { animation-delay: 1s; }
+.flavor-card:nth-child(7) .flavor-svg { animation-delay: 1.2s; }
+.flavor-card:nth-child(8) .flavor-svg { animation-delay: 1.4s; }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(-10px) rotate(5deg); }
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
 }
 
 .flavor-name {
@@ -810,4 +812,73 @@ body {
 
 .flavor-card[data-flavor="abacaxi"] {
     border-color: #FFA500;
+}
+
+.flavor-card[data-flavor="maracujá"] {
+    border-color: #FFD700;
+}
+
+.flavor-card[data-flavor="coco"] {
+    border-color: #F5DEB3;
+}
+
+/* ===== Chopp Illustration SVG Animations ===== */
+.chopp-illustration {
+    width: 200px;
+    height: 260px;
+}
+
+.chopp-illustration .chopp-scoop {
+    animation: scoopBob 3s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+
+.chopp-illustration .scoop-2 {
+    animation-delay: 0.3s;
+}
+
+.chopp-illustration .scoop-3 {
+    animation-delay: 0.6s;
+}
+
+.chopp-illustration .drip {
+    animation: dripDown 2s ease-in infinite;
+    opacity: 0;
+}
+
+.chopp-illustration .drip-2 {
+    animation-delay: 0.7s;
+}
+
+.chopp-illustration .drip-3 {
+    animation-delay: 1.3s;
+}
+
+.chopp-illustration .shine {
+    animation: shinePulse 2s ease-in-out infinite;
+}
+
+.chopp-illustration .chopp-bag {
+    animation: bagWiggle 4s ease-in-out infinite;
+}
+
+@keyframes scoopBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes dripDown {
+    0% { opacity: 0; transform: translateY(0); }
+    20% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(25px); }
+}
+
+@keyframes shinePulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes bagWiggle {
+    0%, 100% { transform: skewX(0deg); }
+    50% { transform: skewX(1.5deg); }
 }
