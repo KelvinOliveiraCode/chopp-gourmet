@@ -7,7 +7,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2=Lobster&family=Nunito:wght@300;400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/9e9b1a6e3f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -50,10 +50,26 @@
                 <div class="flavor-card" data-flavor="leite-ninho">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <path d="M14 8h20l-3 32a4 4 0 0 1-4 3H21a4 4 0 0 1-4-3L14 8z" fill="#FFF8E1" stroke="#F5E6C8" stroke-width="1.5"/>
-                            <ellipse cx="24" cy="8" rx="10" ry="3" fill="#FFF" stroke="#F5E6C8" stroke-width="1.5"/>
-                            <path d="M18 16c2 2 4 3 6 3s4-1 6-3" stroke="#F5E6C8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                            <circle cx="24" cy="28" r="4" fill="#FFF" opacity="0.6"/>
+                            <defs>
+                                <linearGradient id="cartonGrad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#FFFFFF"/>
+                                    <stop offset="100%" stop-color="#F4E9CF"/>
+                                </linearGradient>
+                                <linearGradient id="cartonBand" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="#3FA9F5"/>
+                                    <stop offset="100%" stop-color="#1E6FBF"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="24" cy="45.5" rx="13" ry="1.8" fill="#4A2410" opacity="0.12"/>
+                            <path d="M13 19h22v22a3 3 0 0 1-3 3H16a3 3 0 0 1-3-3V19z" fill="url(#cartonGrad)" stroke="#DDCBA0" stroke-width="1"/>
+                            <path d="M30 19h5v22a3 3 0 0 1-3 3h-2V19z" fill="#E9DCBB" opacity="0.9"/>
+                            <rect x="15.5" y="20.5" width="3" height="18" rx="1.5" fill="#FFFFFF" opacity="0.75"/>
+                            <path d="M13 19 L24 8.5 L35 19 Z" fill="#FFFDF6" stroke="#DDCBA0" stroke-width="1" stroke-linejoin="round"/>
+                            <path d="M24 8.5 L35 19 L24 19 Z" fill="#F4ECDA" opacity="0.85"/>
+                            <rect x="21.5" y="5" width="5" height="4.5" rx="1.2" fill="#FFFDF6" stroke="#DDCBA0" stroke-width="1"/>
+                            <rect x="13" y="26" width="22" height="9" fill="url(#cartonBand)"/>
+                            <rect x="13" y="35" width="22" height="2" fill="#F5B301"/>
+                            <path d="M24 27.6c1.9 1.8 2.9 3 2.9 4.2a2.9 2.9 0 1 1-5.8 0c0-1.2 1-2.4 2.9-4.2z" fill="#FFFFFF"/>
                         </svg>
                         <h3 class="flavor-name">Leite Ninho</h3>
                         <div class="flavor-shimmer"></div>
@@ -63,13 +79,25 @@
                 <div class="flavor-card" data-flavor="tapioca">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <ellipse cx="24" cy="14" rx="14" ry="5" fill="#F5E6C8"/>
-                            <path d="M10 14v6c0 6 4 12 14 12s14-6 14-12v-6" fill="#FFF8E1" stroke="#F5E6C8" stroke-width="1.5"/>
-                            <circle cx="18" cy="12" r="1.5" fill="#D4A574"/>
-                            <circle cx="24" cy="10" r="1.5" fill="#D4A574"/>
-                            <circle cx="30" cy="12" r="1.5" fill="#D4A574"/>
-                            <circle cx="21" cy="15" r="1" fill="#D4A574"/>
-                            <circle cx="27" cy="14" r="1" fill="#D4A574"/>
+                            <defs>
+                                <linearGradient id="tapiocaGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#FFFDF4"/>
+                                    <stop offset="100%" stop-color="#F2E1BC"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="24" cy="43" rx="14" ry="2.2" fill="#4A2410" opacity="0.12"/>
+                            <path d="M7 35a17 15 0 0 1 34 0z" fill="url(#tapiocaGrad)" stroke="#E4D2A8" stroke-width="1.2" stroke-linejoin="round"/>
+                            <path d="M7 35h34v2a4 4 0 0 1-4 4H11a4 4 0 0 1-4-4v-2z" fill="#EDDDB6" stroke="#E4D2A8" stroke-width="1.2" stroke-linejoin="round"/>
+                            <path d="M14 29a13 10 0 0 1 9-7" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+                            <path d="M26 22c3 1.5 5 4 6 7" stroke="#EBCB90" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                            <g fill="#E6D2A6">
+                                <circle cx="20" cy="27" r="1.1"/>
+                                <circle cx="27" cy="24" r="1"/>
+                                <circle cx="32" cy="29" r="1.1"/>
+                                <circle cx="16" cy="32" r="1"/>
+                                <circle cx="24" cy="31" r="1.2"/>
+                                <circle cx="30" cy="34" r="1"/>
+                            </g>
                         </svg>
                         <h3 class="flavor-name">Tapioca</h3>
                         <div class="flavor-shimmer"></div>
@@ -79,12 +107,28 @@
                 <div class="flavor-card" data-flavor="chocolate">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <rect x="8" y="10" width="32" height="28" rx="3" fill="#5D2906"/>
-                            <rect x="12" y="14" width="12" height="10" rx="1.5" fill="#8B4513"/>
-                            <rect x="28" y="14" width="12" height="10" rx="1.5" fill="#8B4513"/>
-                            <rect x="12" y="28" width="12" height="10" rx="1.5" fill="#8B4513"/>
-                            <rect x="28" y="28" width="12" height="10" rx="1.5" fill="#8B4513"/>
-                            <path d="M24 10v28M8 24h32" stroke="#5D2906" stroke-width="1"/>
+                            <defs>
+                                <linearGradient id="chocGrad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#7B4A22"/>
+                                    <stop offset="100%" stop-color="#3E1F08"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="24" cy="42.5" rx="14" ry="2.2" fill="#4A2410" opacity="0.12"/>
+                            <rect x="8" y="9" width="32" height="31" rx="4" fill="url(#chocGrad)"/>
+                            <g fill="#8F5A2E">
+                                <rect x="11" y="12" width="12" height="7" rx="1.5"/>
+                                <rect x="25" y="12" width="12" height="7" rx="1.5"/>
+                                <rect x="11" y="21.5" width="12" height="7" rx="1.5"/>
+                                <rect x="25" y="21.5" width="12" height="7" rx="1.5"/>
+                                <rect x="11" y="31" width="12" height="6" rx="1.5"/>
+                                <rect x="25" y="31" width="12" height="6" rx="1.5"/>
+                            </g>
+                            <g stroke="#B07A4A" stroke-width="1" stroke-linecap="round" opacity="0.7">
+                                <path d="M13 13.5h8M27 13.5h8M13 23h8M27 23h8M13 32.5h8M27 32.5h8"/>
+                            </g>
+                            <rect x="9.5" y="10.5" width="4" height="28" rx="2" fill="#FFFFFF" opacity="0.08"/>
+                            <path d="M8 40V27l11 13H11a3 3 0 0 1-3-3z" fill="#E8C34A"/>
+                            <path d="M10.5 30.5l5.5 6.5" stroke="#C9A13B" stroke-width="1" stroke-linecap="round"/>
                         </svg>
                         <h3 class="flavor-name">Chocolate</h3>
                         <div class="flavor-shimmer"></div>
@@ -94,13 +138,29 @@
                 <div class="flavor-card" data-flavor="morango">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <path d="M24 42s-14-8-14-20c0-6 4-10 8-10 2 0 4 1 6 3 2-2 4-3 6-3 4 0 8 4 8 10 0 12-14 20-14 20z" fill="#FF4D6D"/>
-                            <path d="M24 12c0-4 2-8 6-10-1 3-1 6 0 10" fill="#4CAF50"/>
-                            <path d="M20 14c-2 0-4 1-5 3M28 14c2 0 4 1 5 3" stroke="#FF8FA3" stroke-width="1.5" stroke-linecap="round"/>
-                            <circle cx="19" cy="24" r="1.2" fill="#FFF"/>
-                            <circle cx="25" cy="22" r="1.2" fill="#FFF"/>
-                            <circle cx="29" cy="26" r="1.2" fill="#FFF"/>
-                            <circle cx="22" cy="30" r="1.2" fill="#FFF"/>
+                            <defs>
+                                <linearGradient id="morangoGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#FF7085"/>
+                                    <stop offset="100%" stop-color="#CF2E48"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="24" cy="44" rx="11" ry="2.2" fill="#4A2410" opacity="0.12"/>
+                            <path d="M24 43C12.5 35.5 7.5 27.5 8.5 21 9.8 14.5 16.5 12 24 17.5 31.5 12 38.2 14.5 39.5 21 40.5 27.5 35.5 35.5 24 43z" fill="url(#morangoGrad)"/>
+                            <path d="M24 18c-3.8-.6-7.4-2.6-10-5.6 4.2-.6 8 .4 10.2 2.6 2.2-2.2 6-3.2 10.2-2.6-2.6 3-6.2 5-10.4 5.6z" fill="#57B85C"/>
+                            <path d="M24 17c-.6-3-.4-6 .8-9" stroke="#3E8E41" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                            <g fill="#FFDE7A">
+                                <ellipse cx="17" cy="25" rx="1.1" ry="1.5"/>
+                                <ellipse cx="24" cy="23" rx="1.1" ry="1.5"/>
+                                <ellipse cx="31" cy="25" rx="1.1" ry="1.5"/>
+                                <ellipse cx="15" cy="30.5" rx="1.1" ry="1.5"/>
+                                <ellipse cx="20.5" cy="30" rx="1.1" ry="1.5"/>
+                                <ellipse cx="27.5" cy="30" rx="1.1" ry="1.5"/>
+                                <ellipse cx="32.5" cy="30.5" rx="1.1" ry="1.5"/>
+                                <ellipse cx="24" cy="36" rx="1.1" ry="1.5"/>
+                                <ellipse cx="19.5" cy="36.5" rx="1" ry="1.4"/>
+                                <ellipse cx="28.5" cy="36.5" rx="1" ry="1.4"/>
+                            </g>
+                            <path d="M14 23.5c1.2-3.2 3.4-5.6 6.3-6.8" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.5"/>
                         </svg>
                         <h3 class="flavor-name">Morango</h3>
                         <div class="flavor-shimmer"></div>
@@ -110,14 +170,33 @@
                 <div class="flavor-card" data-flavor="maracujá">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <ellipse cx="24" cy="26" rx="14" ry="16" fill="#FFD54F"/>
-                            <ellipse cx="24" cy="26" rx="10" ry="12" fill="#FF8F00"/>
-                            <circle cx="20" cy="22" r="2" fill="#5D2906"/>
-                            <circle cx="28" cy="22" r="2" fill="#5D2906"/>
-                            <circle cx="24" cy="28" r="2" fill="#5D2906"/>
-                            <circle cx="18" cy="28" r="1.5" fill="#5D2906"/>
-                            <circle cx="30" cy="28" r="1.5" fill="#5D2906"/>
-                            <path d="M24 10c0-3 2-5 4-6" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                                <radialGradient id="maracujaPulp" cx="50%" cy="45%" r="60%">
+                                    <stop offset="0%" stop-color="#FFB74D"/>
+                                    <stop offset="100%" stop-color="#FF8F00"/>
+                                </radialGradient>
+                            </defs>
+                            <ellipse cx="24" cy="44" rx="12" ry="2.2" fill="#4A2410" opacity="0.12"/>
+                            <path d="M26.5 9.5c.4-2 1.8-3.4 4-4" stroke="#7CB342" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            <circle cx="24" cy="26" r="17" fill="#FFC93C" stroke="#E0A217" stroke-width="1"/>
+                            <circle cx="24" cy="26" r="13.5" fill="url(#maracujaPulp)"/>
+                            <g fill="#4E2A10">
+                                <ellipse cx="24" cy="19.5" rx="1.6" ry="2.2"/>
+                                <ellipse cx="30" cy="22.5" rx="1.6" ry="2.2" transform="rotate(35 30 22.5)"/>
+                                <ellipse cx="31.5" cy="29" rx="1.6" ry="2.2" transform="rotate(70 31.5 29)"/>
+                                <ellipse cx="27" cy="34" rx="1.6" ry="2.2" transform="rotate(110 27 34)"/>
+                                <ellipse cx="20.5" cy="34" rx="1.6" ry="2.2" transform="rotate(-110 20.5 34)"/>
+                                <ellipse cx="16.3" cy="29" rx="1.6" ry="2.2" transform="rotate(-70 16.3 29)"/>
+                                <ellipse cx="17.8" cy="22.5" rx="1.6" ry="2.2" transform="rotate(-35 17.8 22.5)"/>
+                                <ellipse cx="24" cy="27" rx="1.6" ry="2.2"/>
+                                <ellipse cx="24" cy="32.5" rx="1.4" ry="1.9"/>
+                            </g>
+                            <g fill="#FFFFFF" opacity="0.35">
+                                <circle cx="23.4" cy="18.9" r="0.6"/>
+                                <circle cx="29.4" cy="21.9" r="0.6"/>
+                                <circle cx="23.4" cy="26.4" r="0.6"/>
+                            </g>
+                            <path d="M13.5 20.5a13 13 0 0 1 7.5-6" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.5"/>
                         </svg>
                         <h3 class="flavor-name">Maracujá</h3>
                         <div class="flavor-shimmer"></div>
@@ -127,10 +206,19 @@
                 <div class="flavor-card" data-flavor="abacate">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <path d="M24 6c8 0 14 8 14 18s-6 20-14 20S10 34 10 24 16 6 24 6z" fill="#7CB342"/>
-                            <path d="M24 10c5 0 9 6 9 14s-4 16-9 16-9-8-9-16 4-14 9-14z" fill="#C5E1A5"/>
-                            <ellipse cx="24" cy="28" rx="5" ry="6" fill="#8D6E63"/>
-                            <ellipse cx="24" cy="28" rx="3" ry="4" fill="#6D4C41"/>
+                            <defs>
+                                <linearGradient id="abacateFlesh" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#F1F8E1"/>
+                                    <stop offset="100%" stop-color="#C5E1A5"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="24" cy="45" rx="10" ry="2" fill="#4A2410" opacity="0.12"/>
+                            <path d="M24 5c7.7 0 13.5 8.6 13.5 18.5S31.7 43 24 43 10.5 33.4 10.5 23.5 16.3 5 24 5z" fill="#2F5E22"/>
+                            <path d="M24 8.5c6.2 0 10.8 7 10.8 15.2S30.2 40 24 40 13.2 31.9 13.2 23.7 17.8 8.5 24 8.5z" fill="url(#abacateFlesh)"/>
+                            <ellipse cx="24" cy="27" rx="6.4" ry="7.4" fill="#8D6E63"/>
+                            <ellipse cx="24" cy="27" rx="4.6" ry="5.4" fill="#6D4C41"/>
+                            <ellipse cx="22.2" cy="24.6" rx="1.7" ry="2.1" fill="#FFFFFF" opacity="0.3"/>
+                            <path d="M16.5 16.5c1.4-3 3.6-5.4 6.4-6.6" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.6"/>
                         </svg>
                         <h3 class="flavor-name">Abacate</h3>
                         <div class="flavor-shimmer"></div>
@@ -140,10 +228,29 @@
                 <div class="flavor-card" data-flavor="abacaxi">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <path d="M24 14c-8 0-14 8-14 18s6 18 14 18 14-8 14-18-6-18-14-18z" fill="#FFC107"/>
-                            <path d="M18 18l4 8M30 18l-4 8M16 26l6 6M32 26l-6 6M20 34l4 4M28 34l-4 4" stroke="#FF8F00" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M20 14c0-4 2-8 4-10 2 2 4 6 4 10" fill="#4CAF50"/>
-                            <path d="M16 16c-2-2-4-3-6-3 1 3 3 5 6 6M32 16c2-2 4-3 6-3-1 3-3 5-6 6" fill="#388E3C"/>
+                            <defs>
+                                <clipPath id="abacaxiClip">
+                                    <path d="M24 15c-8.6 0-14 7.6-14 16.5S15.6 46 24 46s14-6.9 14-14.5S32.6 15 24 15z"/>
+                                </clipPath>
+                                <linearGradient id="abacaxiGrad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#FFD54F"/>
+                                    <stop offset="100%" stop-color="#F57F17"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="24" cy="46.5" rx="11" ry="1.8" fill="#4A2410" opacity="0.12"/>
+                            <path d="M24 15c-8.6 0-14 7.6-14 16.5S15.6 46 24 46s14-6.9 14-14.5S32.6 15 24 15z" fill="url(#abacaxiGrad)" stroke="#E08E0B" stroke-width="1.2"/>
+                            <g clip-path="url(#abacaxiClip)" stroke="#E08E0B" stroke-width="1.4" opacity="0.75" fill="none">
+                                <path d="M0 -8L48 40M0 2L48 50M0 12L48 60M0 22L48 70M0 32L48 80"/>
+                                <path d="M0 36L48 -12M0 46L48 -2M0 56L48 8M0 66L48 18M0 76L48 28"/>
+                            </g>
+                            <g>
+                                <path d="M24 16C21 13 18.5 9.5 17 5c4.2.6 7.6 3 9.5 6.8z" fill="#57B85C"/>
+                                <path d="M24 16c3-3 5.5-6.5 7-11-4.2.6-7.6 3-9.5 6.8z" fill="#2E7D32"/>
+                                <path d="M24 15.5c-1.8-4-2.4-8.4-1.6-12.5 2.8 3.8 4 8.2 3.8 12.7z" fill="#43A047"/>
+                                <path d="M21 16.5c-3.4-1.2-6.6-1.4-9.6-.4 2.6 2.4 6 3.6 9.6 3.2z" fill="#66BB6A"/>
+                                <path d="M27 16.5c3.4-1.2 6.6-1.4 9.6-.4-2.6 2.4-6 3.6-9.6 3.2z" fill="#388E3C"/>
+                            </g>
+                            <path d="M15.5 23c.6-3.2 2.2-6.2 4.5-8.2" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.5"/>
                         </svg>
                         <h3 class="flavor-name">Abacaxi</h3>
                         <div class="flavor-shimmer"></div>
@@ -153,12 +260,19 @@
                 <div class="flavor-card" data-flavor="coco">
                     <div class="flavor-card-inner">
                         <svg class="flavor-svg" viewBox="0 0 48 48" fill="none">
-                            <ellipse cx="24" cy="26" rx="14" ry="16" fill="#8D6E63"/>
-                            <ellipse cx="24" cy="26" rx="11" ry="13" fill="#D7CCC8"/>
-                            <circle cx="19" cy="20" r="2.5" fill="#5D4037"/>
-                            <circle cx="29" cy="20" r="2.5" fill="#5D4037"/>
-                            <circle cx="24" cy="28" r="2.5" fill="#5D4037"/>
-                            <path d="M18 34c2 2 4 3 6 3s4-1 6-3" stroke="#BCAAA4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="cocoShell" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#8D6E63"/>
+                                    <stop offset="100%" stop-color="#4E2A10"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="24" cy="42.5" rx="14" ry="2.4" fill="#4A2410" opacity="0.12"/>
+                            <path d="M7 27a17 14 0 0 0 34 0z" fill="url(#cocoShell)" stroke="#3E210E" stroke-width="1.2"/>
+                            <path d="M13 32.5c1 4.5 3.2 8 6.5 10.5M34.5 31c-.8 4.6-3 8.3-6.2 10.9" stroke="#5D4037" stroke-width="1.4" fill="none" opacity="0.55" stroke-linecap="round"/>
+                            <path d="M12 31c.8 3.5 2.5 6.5 5 9" stroke="#A1887F" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+                            <ellipse cx="24" cy="27" rx="17" ry="6.5" fill="#7B4A2E" stroke="#3E210E" stroke-width="1.2"/>
+                            <ellipse cx="24" cy="27.3" rx="13.2" ry="4.7" fill="#FFFDF7"/>
+                            <ellipse cx="24" cy="27.8" rx="9.5" ry="3.2" fill="#F3ECDD"/>
                         </svg>
                         <h3 class="flavor-name">Coco</h3>
                         <div class="flavor-shimmer"></div>
@@ -183,52 +297,40 @@
                 <div class="about-image">
                     <svg class="chopp-illustration" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="coneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#D2691E"/>
-                                <stop offset="100%" style="stop-color:#8B4513"/>
+                            <linearGradient id="bagCream" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#FFF6DC"/>
+                                <stop offset="50%" stop-color="#FFEDBE"/>
+                                <stop offset="100%" stop-color="#F4D89B"/>
                             </linearGradient>
-                            <linearGradient id="iceGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#FFF5EE"/>
-                                <stop offset="100%" style="stop-color:#FFE4C4"/>
+                            <linearGradient id="bagChoc" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#6B3A17"/>
+                                <stop offset="50%" stop-color="#5D2906"/>
+                                <stop offset="100%" stop-color="#43200B"/>
                             </linearGradient>
-                            <linearGradient id="iceGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#FFB6C1"/>
-                                <stop offset="100%" style="stop-color:#FF69B4"/>
-                            </linearGradient>
-                            <linearGradient id="bagGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#E0F7FA"/>
-                                <stop offset="100%" style="stop-color:#B2EBF2"/>
-                            </linearGradient>
+                            <clipPath id="bagClip">
+                                <path d="M3 26h46v158a12 12 0 0 1-12 12H15a12 12 0 0 1-12-12V26z"/>
+                            </clipPath>
+                            <g id="choppBagShape">
+                                <path d="M3 26h46v158a12 12 0 0 1-12 12H15a12 12 0 0 1-12-12V26z" fill="url(#bagCream)"/>
+                                <path d="M3 104c7-6 13 5 21 0s13-9 25-3v85a12 12 0 0 1-12 12H15a12 12 0 0 1-12-12V104z" fill="url(#bagChoc)"/>
+                                <g clip-path="url(#bagClip)">
+                                    <path d="M12 118c5 7 3 16-2 24" stroke="#FFE9B8" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5"/>
+                                    <path d="M38 108c4 9-3 16 1 26" stroke="#8B4513" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.55"/>
+                                    <path d="M25 152c6 4 8 12 5 20" stroke="#7B4A22" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.45"/>
+                                    <path d="M9 32v156" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+                                    <path d="M40 36v138" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
+                                </g>
+                                <path d="M3 26h46v158a12 12 0 0 1-12 12H15a12 12 0 0 1-12-12V26z" fill="none" stroke="#D9C7A8" stroke-width="1.5" opacity="0.8"/>
+                                <path d="M14 26 L17 17 H35 L38 26 Z" fill="#FFFDF4" stroke="#D9C7A8" stroke-width="1.2" stroke-linejoin="round"/>
+                                <path d="M17 17 C14 9 15 4 19 2 C25 6 31 6 36 2 C39 5 38 11 35 17 Z" fill="#FFFDF4" stroke="#D9C7A8" stroke-width="1.2" stroke-linejoin="round"/>
+                                <path d="M21 24.5l1-6M25 24.5l.6-6M29 24.5l-.4-6M33 24.5l-1-6" stroke="#D9C7A8" stroke-width="1" stroke-linecap="round"/>
+                            </g>
                         </defs>
+                        <ellipse cx="100" cy="248" rx="82" ry="9" fill="#4A2410" opacity="0.12"/>
                         <g class="chopp-bag">
-                            <path d="M60 80 L140 80 L130 200 L70 200 Z" fill="url(#bagGrad)" stroke="#80DEEA" stroke-width="2"/>
-                            <path d="M60 80 L140 80 L135 120 L65 120 Z" fill="#E0F7FA" opacity="0.5"/>
-                            <rect x="55" y="70" width="90" height="15" rx="7" fill="#4DD0E1"/>
-                        </g>
-                        <g class="chopp-scoop scoop-1">
-                            <circle cx="100" cy="55" r="30" fill="url(#iceGrad1)"/>
-                            <circle cx="85" cy="45" r="8" fill="#FFF" opacity="0.6"/>
-                        </g>
-                        <g class="chopp-scoop scoop-2">
-                            <circle cx="75" cy="65" r="22" fill="url(#iceGrad2)"/>
-                            <circle cx="65" cy="58" r="6" fill="#FFF" opacity="0.5"/>
-                        </g>
-                        <g class="chopp-scoop scoop-3">
-                            <circle cx="125" cy="65" r="22" fill="url(#iceGrad1)"/>
-                            <circle cx="115" cy="58" r="6" fill="#FFF" opacity="0.5"/>
-                        </g>
-                        <g class="chopp-cone">
-                            <path d="M70 200 L130 200 L100 260 Z" fill="url(#coneGrad)" stroke="#5D2906" stroke-width="1.5"/>
-                            <line x1="80" y1="215" x2="120" y2="215" stroke="#5D2906" stroke-width="1" opacity="0.4"/>
-                            <line x1="85" y1="230" x2="115" y2="230" stroke="#5D2906" stroke-width="1" opacity="0.4"/>
-                        </g>
-                        <g class="chopp-drips">
-                            <path d="M75 120 Q78 140 75 155" stroke="#FFF5EE" stroke-width="3" fill="none" stroke-linecap="round" class="drip drip-1"/>
-                            <path d="M125 120 Q122 140 125 155" stroke="#FFF5EE" stroke-width="3" fill="none" stroke-linecap="round" class="drip drip-2"/>
-                            <path d="M100 125 Q100 145 100 160" stroke="#FFB6C1" stroke-width="2.5" fill="none" stroke-linecap="round" class="drip drip-3"/>
-                        </g>
-                        <g class="chopp-shine">
-                            <ellipse cx="80" cy="100" rx="4" ry="15" fill="#FFF" opacity="0.3" class="shine"/>
+                            <use href="#choppBagShape" transform="translate(18 44) rotate(-4 26 105)"/>
+                            <use href="#choppBagShape" transform="translate(74 34)"/>
+                            <use href="#choppBagShape" transform="translate(130 48) rotate(4 26 105)"/>
                         </g>
                     </svg>
                 </div>
@@ -259,7 +361,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>© 2024 Chopp Gourmet — Todos os direitos reservados.</p>
+            <p>Feito por <a href="https://github.com/KelvinOliveiraCode" target="_blank" rel="noopener noreferrer">https://github.com/KelvinOliveiraCode</a></p>
         </footer>
     </div>
 
