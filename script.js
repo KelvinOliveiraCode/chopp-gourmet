@@ -137,14 +137,18 @@ class ScrollAnimation {
 class ModalManager {
     constructor() {
         this.modal = document.getElementById('pix-modal');
-        this.openBtn = document.getElementById('open-modal');
+        this.openBtns = document.querySelectorAll('#open-modal, #open-modal-mobile');
         this.closeBtn = document.getElementById('close-modal');
+        this.copyBtn = document.getElementById('copy-pix');
         this.init();
     }
 
     init() {
-        if (this.openBtn) {
-            this.openBtn.addEventListener('click', () => this.open());
+        this.openBtns.forEach(btn => {
+            btn.addEventListener('click', () => this.open());
+        });
+        if (this.copyBtn) {
+            this.copyBtn.addEventListener('click', () => this.copyKey());
         }
         if (this.closeBtn) {
             this.closeBtn.addEventListener('click', () => this.close());
@@ -166,6 +170,31 @@ class ModalManager {
     close() {
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
+    }
+
+    async copyKey() {
+        const key = '582cc87e-5ebd-4373-a851-f1c04d17c5ee';
+        try {
+            await navigator.clipboard.writeText(key);
+        } catch (e) {
+            const ta = document.createElement('textarea');
+            ta.value = key;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+        }
+        if (this.copyBtn) {
+            const original = 'Copiar';
+            this.copyBtn.textContent = 'Copiado!';
+            this.copyBtn.classList.add('copied');
+            setTimeout(() => {
+                this.copyBtn.textContent = original;
+                this.copyBtn.classList.remove('copied');
+            }, 2000);
+        }
     }
 }
 
@@ -226,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-        }, 800 + index * 150);
+        }, 300 + index * 80);
     });
 
     // Staggered animation for "How to buy" steps
@@ -238,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             step.style.opacity = '1';
             step.style.transform = 'translateX(0)';
-        }, 1000 + index * 200);
+        }, 400 + index * 100);
     });
 
     // Keyboard accessibility for modal

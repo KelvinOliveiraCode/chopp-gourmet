@@ -18,6 +18,7 @@ body {
     background: linear-gradient(160deg, #FFF1DE 0%, #FFE2EE 40%, #F7E9FA 72%, #E9F4FF 100%);
     position: relative;
     color: #4A3B31;
+    -webkit-tap-highlight-color: rgba(240, 86, 138, 0.25);
 }
 
 /* ===== Design Tokens ===== */
@@ -228,7 +229,7 @@ body::before {
     color: #6B5445;
     margin-bottom: 25px;
     letter-spacing: 0.3px;
-    animation: fadeIn 1s ease 1s forwards;
+    animation: fadeIn 0.6s ease 0.5s forwards;
     opacity: 0;
 }
 
@@ -247,7 +248,7 @@ body::before {
     border-radius: 50px;
     margin-bottom: 25px;
     box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-    animation: bounceIn 0.8s ease 1.2s forwards;
+    animation: bounceIn 0.6s ease 0.3s forwards;
     opacity: 0;
 }
 
@@ -277,7 +278,7 @@ body::before {
     cursor: pointer;
     box-shadow: 0 10px 30px rgba(240, 86, 138, 0.4);
     transition: all 0.3s ease;
-    animation: fadeIn 1s ease 1.4s forwards;
+    animation: fadeIn 0.6s ease 0.7s forwards;
     opacity: 0;
     position: relative;
     overflow: hidden;
@@ -836,7 +837,8 @@ body::before {
     border: 5px solid white;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
 }
 
 .qr-code:hover {
@@ -858,26 +860,153 @@ body::before {
     font-size: 18px;
 }
 
+/* ===== Mobile Sticky Buy Bar ===== */
+.mobile-buy-bar {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(58, 28, 10, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 -12px 30px rgba(46, 20, 6, 0.4);
+}
+
+.mobile-buy-price {
+    color: #FFF7EC;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.mobile-buy-price strong {
+    font-size: 22px;
+    font-weight: 800;
+    color: #F5B301;
+}
+
+.mobile-buy-price span {
+    display: block;
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.mobile-buy-btn {
+    flex: 1;
+    max-width: 250px;
+    min-height: 50px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #F0568A, #D63A6F);
+    color: #FFFFFF;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(240, 86, 138, 0.45);
+    transition: transform 0.2s ease;
+}
+
+.mobile-buy-btn:active {
+    transform: scale(0.97);
+}
+
+/* ===== Copy Pix Button ===== */
+.pix-key-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.pix-key-row .pix-key {
+    flex: 1 1 200px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.copy-pix {
+    min-height: 44px;
+    min-width: 96px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #F0568A, #D63A6F);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.copy-pix:active {
+    transform: scale(0.96);
+}
+
+.copy-pix.copied {
+    background: linear-gradient(135deg, #43A047, #2E7D32);
+}
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+    .mobile-buy-bar {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 86px;
+    }
+
     .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+        flex-direction: row;
+        padding: 10px 16px;
+        margin-bottom: 14px;
+    }
+
+    .logo {
+        font-size: 23px;
     }
 
     .nav-links {
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        padding: 9px 13px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 24px 0 44px;
+        margin-bottom: 16px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 9vw, 3rem);
+        gap: 4px 14px;
+    }
+
+    .section {
+        padding: 44px 0;
     }
 
     .about-content {
         grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .about-section {
+        padding: 34px 22px;
     }
 
     .floating-cone {
@@ -887,27 +1016,117 @@ body::before {
     .how-steps {
         gap: 15px;
     }
+
+    .how-step {
+        padding: 20px;
+    }
+
+    .chopp-illustration {
+        width: 170px;
+        height: 222px;
+    }
+}
+
+@media (max-width: 640px) {
+    .flavors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .flavor-card {
+        padding: 22px 12px 18px;
+        border-radius: 22px;
+    }
+
+    .flavor-svg {
+        width: 78px;
+        height: 78px;
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+
+    .flavor-name {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .flavor-price {
+        font-size: 15px;
+        padding: 4px 14px;
+    }
 }
 
 @media (max-width: 480px) {
+    .app {
+        padding: 0 14px;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 8.5vw, 2.4rem);
+        gap: 2px 10px;
     }
 
     .hero-subtitle {
         font-size: 18px;
     }
 
+    .hero-price-badge {
+        font-size: 18px;
+        padding: 10px 22px;
+        margin-bottom: 18px;
+    }
+
+    .big-price {
+        font-size: 24px;
+    }
+
     .cta-button {
-        padding: 14px 30px;
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        padding: 16px 24px;
         font-size: 18px;
     }
 
+    .section-title {
+        font-size: 1.65rem;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 34px;
+    }
+
+    .about-section {
+        padding: 26px 16px;
+        border-radius: 24px;
+    }
+
+    .about-text h2 {
+        font-size: 1.5rem;
+    }
+
     .modal {
-        padding: 30px 20px;
+        width: 94%;
+        padding: 26px 18px;
+        border-radius: 24px;
+    }
+
+    .mobile-buy-price span {
+        display: none;
     }
 }
 
+@media (max-height: 640px) {
+    .qr-code {
+        width: 150px;
+        height: 150px;
+    }
+
+    .modal {
+        padding: 20px 16px;
+    }
+}
 /* ===== Flavor-specific accents ===== */
 .flavor-card[data-flavor="leite-ninho"] { border-top: 4px solid #4FC3F7; }
 .flavor-card[data-flavor="leite-ninho"] .flavor-svg { background: radial-gradient(circle at 30% 25%, #FFFFFF, #E3F2FD); }

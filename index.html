@@ -2,7 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#3A1C0A">
     <title>Chopp Gourmet — O Doce da Vida Gelado</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -435,14 +436,23 @@
             </div>
             <div class="modal-body">
                 <p><strong>Chave Pix:</strong></p>
-                <p class="pix-key">582cc87e-5ebd-4373-a851-f1c04d17c5ee</p>
+                <div class="pix-key-row">
+                    <p class="pix-key">582cc87e-5ebd-4373-a851-f1c04d17c5ee</p>
+                    <button class="copy-pix" id="copy-pix" type="button">Copiar</button>
+                </div>
                 <div class="qr-code-container">
-                    <img src="https://quickchart.io/qr?text=582cc87e-5ebd-4373-a851-f1c04d17c5ee&size=200&color=000000&bgcolor=FFFFFF" alt="QR Code Pix" class="qr-code">
-                    <p class="qr-label">Escaneie para pagar</p>
+                    <img src="https://quickchart.io/qr?text=582cc87e-5ebd-4373-a851-f1c04d17c5ee&size=220&color=000000&bgcolor=FFFFFF" alt="QR Code Pix" class="qr-code">
+                    <p class="qr-label">Escaneie com o app do seu banco</p>
                 </div>
                 <p class="modal-footer-note">R$ 4,00 — Valor por unidade</p>
             </div>
         </div>
+    </div>
+
+    <!-- Barra de compra fixa (celular) -->
+    <div class="mobile-buy-bar">
+        <div class="mobile-buy-price">R$ <strong>4,00</strong> <span>/ unidade</span></div>
+        <button class="mobile-buy-btn" id="open-modal-mobile" type="button">Comprar Agora</button>
     </div>
 
     <script src="script.js"></script>
