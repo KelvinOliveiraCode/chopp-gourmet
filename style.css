@@ -23,6 +23,7 @@ body {
 
 /* ===== Design Tokens ===== */
 :root {
+    color-scheme: only light;
     --cream: #FFF7EC;
     --blush: #FFE9F1;
     --choco: #4A2410;
