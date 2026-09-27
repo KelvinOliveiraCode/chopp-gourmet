@@ -958,6 +958,41 @@ body::before {
 .copy-pix.copied {
     background: linear-gradient(135deg, #43A047, #2E7D32);
 }
+/* ===== Pix Copia e Cola (primary) ===== */
+.copy-pix-primary {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    margin: 2px auto 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #4A2410;
+    background: linear-gradient(135deg, #FFD34D, #F5B301);
+    box-shadow: 0 10px 24px rgba(245, 179, 1, 0.45);
+}
+
+.copy-pix-primary.copied {
+    background: linear-gradient(135deg, #43A047, #2E7D32);
+    color: #FFFFFF;
+    box-shadow: 0 10px 24px rgba(46, 125, 50, 0.4);
+}
+
+.pix-hint {
+    margin: 0 0 14px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #7B6A5E;
+}
+
+.qr-code {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.qr-code:active {
+    transform: scale(0.98);
+}
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .mobile-buy-bar {

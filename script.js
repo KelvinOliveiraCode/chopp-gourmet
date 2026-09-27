@@ -148,7 +148,17 @@ class ModalManager {
             btn.addEventListener('click', () => this.open());
         });
         if (this.copyBtn) {
-            this.copyBtn.addEventListener('click', () => this.copyKey());
+            this.copyBtn.addEventListener('click', () => {
+                this.copyText('582cc87e-5ebd-4373-a851-f1c04d17c5ee', this.copyBtn);
+            });
+        }
+        const payloadBtn = document.getElementById('copy-pix-payload');
+        if (payloadBtn) {
+            payloadBtn.addEventListener('click', () => this.copyText(this.getPixPayload(), payloadBtn));
+        }
+        const qr = document.getElementById('qr-code');
+        if (qr) {
+            qr.addEventListener('click', () => this.copyText(this.getPixPayload(), payloadBtn));
         }
         if (this.closeBtn) {
             this.closeBtn.addEventListener('click', () => this.close());
@@ -165,6 +175,8 @@ class ModalManager {
     open() {
         this.modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        // Copia o Pix Copia e Cola automaticamente (os bancos detectam a área de transferência)
+        this.copyText(this.getPixPayload(), document.getElementById('copy-pix-payload'));
     }
 
     close() {
@@ -172,29 +184,42 @@ class ModalManager {
         document.body.style.overflow = '';
     }
 
-    async copyKey() {
-        const key = '582cc87e-5ebd-4373-a851-f1c04d17c5ee';
+    getPixPayload() {
+        const qr = document.getElementById('qr-code');
+        return qr ? (qr.dataset.pixPayload || '') : '';
+    }
+
+    async copyText(text, btn) {
+        if (!text) return false;
+        let ok = true;
         try {
-            await navigator.clipboard.writeText(key);
+            await navigator.clipboard.writeText(text);
         } catch (e) {
-            const ta = document.createElement('textarea');
-            ta.value = key;
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            document.body.removeChild(ta);
+            try {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            } catch (e2) {
+                ok = false;
+            }
         }
-        if (this.copyBtn) {
-            const original = 'Copiar';
-            this.copyBtn.textContent = 'Copiado!';
-            this.copyBtn.classList.add('copied');
-            setTimeout(() => {
-                this.copyBtn.textContent = original;
-                this.copyBtn.classList.remove('copied');
+        if (ok && btn) {
+            const original = btn.dataset.label || btn.textContent;
+            btn.dataset.label = original;
+            btn.textContent = 'Copiado!';
+            btn.classList.add('copied');
+            clearTimeout(btn._copyTimer);
+            btn._copyTimer = setTimeout(() => {
+                btn.textContent = original;
+                btn.classList.remove('copied');
             }, 2000);
         }
+        return ok;
     }
 }
 
