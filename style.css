@@ -12,10 +12,10 @@ html {
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(160deg, #FFF7EC 0%, #FFEAF1 50%, #FDEFF6 100%);
+    background: linear-gradient(160deg, #FFF1DE 0%, #FFE2EE 40%, #F7E9FA 72%, #E9F4FF 100%);
     position: relative;
     color: #4A3B31;
 }
@@ -57,6 +57,59 @@ body::before {
     z-index: 0;
 }
 
+/* ===== Falling Flavors Background ===== */
+.falling-fruits {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.falling-fruit {
+    position: absolute;
+    top: 0;
+    left: var(--x, 10%);
+    width: var(--size, 48px);
+    height: var(--size, 48px);
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: fruitFall var(--dur, 22s) linear var(--delay, 0s) infinite;
+    filter: drop-shadow(0 6px 14px rgba(74, 36, 16, 0.18));
+}
+
+@keyframes fruitFall {
+    0% {
+        transform: translateY(-12vh) rotate(0deg);
+        opacity: 0;
+    }
+    8% {
+        opacity: var(--op, 0.3);
+    }
+    50% {
+        transform: translateY(50vh) translateX(var(--sway, 16px)) rotate(calc(var(--rot, 40deg) / 2));
+        opacity: var(--op, 0.3);
+    }
+    92% {
+        opacity: var(--op, 0.3);
+    }
+    100% {
+        transform: translateY(112vh) translateX(0) rotate(var(--rot, 40deg));
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .falling-fruit:nth-child(n + 9) {
+        display: none;
+    }
+
+    .falling-fruit {
+        width: calc(var(--size, 48px) * 0.7);
+        height: calc(var(--size, 48px) * 0.7);
+    }
+}
+
 /* ===== App Container ===== */
 .app {
     position: relative;
@@ -71,26 +124,24 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(58, 28, 10, 0.88);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-radius: 50px;
     padding: 14px 28px;
     margin-bottom: 24px;
-    box-shadow: 0 14px 34px -14px rgba(74, 36, 16, 0.28);
-    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 16px 36px -14px rgba(46, 20, 6, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .logo {
-    font-family: 'Baloo 2', cursive;
-    font-weight: 800;
-    font-size: 30px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
     line-height: 1;
-    background: linear-gradient(120deg, #D63A6F, #F0568A 50%, #F5B301);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: pulse 2.5s infinite;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes pulse {
@@ -106,14 +157,15 @@ body::before {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    font-family: 'Manrope', sans-serif;
+    color: #FFF7EC;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     padding: 8px 16px;
     border-radius: 25px;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .nav-links a:hover {
@@ -131,17 +183,19 @@ body::before {
 }
 
 .hero-title {
-    font-family: 'Baloo 2', cursive;
-    font-weight: 800;
-    font-size: clamp(2.6rem, 8vw, 5.2rem);
-    line-height: 1.05;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 7vw, 4.6rem);
+    line-height: 1.1;
     letter-spacing: 0.5px;
     color: #4A2410;
     margin-bottom: 20px;
     text-shadow: 0 8px 24px rgba(93, 41, 6, 0.15);
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 22px;
     align-items: center;
 }
 
@@ -168,7 +222,7 @@ body::before {
 }
 
 .hero-subtitle {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     font-weight: 600;
     font-size: 23px;
     color: #6B5445;
@@ -186,7 +240,7 @@ body::before {
     display: inline-block;
     background: linear-gradient(135deg, #FFD700, #FFFACD);
     color: #8B4513;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 22px;
     padding: 12px 30px;
@@ -216,7 +270,7 @@ body::before {
     color: white;
     border: none;
     padding: 16px 40px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 700;
     border-radius: 50px;
@@ -280,7 +334,7 @@ body::before {
 
 .section-title {
     text-align: center;
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     font-weight: 700;
     font-size: clamp(1.9rem, 5vw, 2.9rem);
     color: #4A2410;
@@ -304,7 +358,7 @@ body::before {
     text-align: center;
     color: #7B6A5E;
     margin-bottom: 44px;
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     font-weight: 500;
     font-size: 19px;
 }
@@ -376,7 +430,7 @@ body::before {
 }
 
 .flavor-name {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     font-weight: 700;
     font-size: 23px;
     color: #4A2410;
@@ -385,7 +439,7 @@ body::before {
 }
 
 .flavor-price {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 18px;
     color: #8B4513;
@@ -428,7 +482,7 @@ body::before {
 }
 
 .about-text h2 {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     font-weight: 700;
     font-size: 2rem;
     color: #4A2410;
@@ -445,7 +499,7 @@ body::before {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
 
@@ -564,7 +618,7 @@ body::before {
 }
 
 .how-step h3 {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     color: #8B4513;
     margin-bottom: 8px;
 }
@@ -611,7 +665,7 @@ body::before {
     margin-top: 20px;
     border-top: 1px solid rgba(123, 74, 34, 0.15);
     color: #7B6A5E;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
 }
 
@@ -745,7 +799,7 @@ body::before {
 }
 
 .modal-header h3 {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     color: #F0568A;
     font-size: 24px;
 }
@@ -764,7 +818,7 @@ body::before {
 }
 
 .modal-body h3 {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #555;
     margin-bottom: 10px;
 }
@@ -790,14 +844,14 @@ body::before {
 }
 
 .qr-label {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Fredoka', sans-serif;
     color: #8B4513;
     margin-top: 10px;
     font-size: 16px;
 }
 
 .modal-footer-note {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #8B4513;
     margin-top: 15px;

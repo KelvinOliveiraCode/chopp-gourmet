@@ -7,7 +7,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/9e9b1a6e3f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -15,6 +15,67 @@
 <body>
     <!-- Background Canvas for Snow/Ice Particles -->
     <canvas id="snow-canvas"></canvas>
+
+    <!-- Hidden symbols: sabores para o fundo (sem leite ninho) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+        <symbol id="sym-morango" viewBox="0 0 48 48">
+            <path d="M24 43C12.5 35.5 7.5 27.5 8.5 21 9.8 14.5 16.5 12 24 17.5 31.5 12 38.2 14.5 39.5 21 40.5 27.5 35.5 35.5 24 43z" fill="#F0506E"/>
+            <path d="M24 18c-3.8-.6-7.4-2.6-10-5.6 4.2-.6 8 .4 10.2 2.6 2.2-2.2 6-3.2 10.2-2.6-2.6 3-6.2 5-10.4 5.6z" fill="#4FA855"/>
+            <path d="M24 17c-.6-3-.4-6 .8-9" stroke="#3E8E41" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <g fill="#FFDE7A"><ellipse cx="18" cy="25" rx="1.2" ry="1.6"/><ellipse cx="27" cy="25" rx="1.2" ry="1.6"/><ellipse cx="24" cy="33" rx="1.2" ry="1.6"/><ellipse cx="16" cy="31" rx="1.1" ry="1.5"/><ellipse cx="31" cy="31" rx="1.1" ry="1.5"/></g>
+        </symbol>
+        <symbol id="sym-maracuja" viewBox="0 0 48 48">
+            <path d="M26.5 9.5c.4-2 1.8-3.4 4-4" stroke="#5E9E45" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="24" cy="26" r="17" fill="#F5B301"/>
+            <circle cx="24" cy="26" r="13.5" fill="#FF8F00"/>
+            <g fill="#4E2A10"><ellipse cx="24" cy="20" rx="1.6" ry="2.2"/><ellipse cx="30" cy="24" rx="1.6" ry="2.2"/><ellipse cx="28" cy="32" rx="1.6" ry="2.2"/><ellipse cx="20" cy="32" rx="1.6" ry="2.2"/><ellipse cx="18" cy="24" rx="1.6" ry="2.2"/><ellipse cx="24" cy="27" rx="1.6" ry="2.2"/></g>
+        </symbol>
+        <symbol id="sym-abacate" viewBox="0 0 48 48">
+            <path d="M24 5c7.7 0 13.5 8.6 13.5 18.5S31.7 43 24 43 10.5 33.4 10.5 23.5 16.3 5 24 5z" fill="#2F5E22"/>
+            <path d="M24 8.5c6.2 0 10.8 7 10.8 15.2S30.2 40 24 40 13.2 31.9 13.2 23.7 17.8 8.5 24 8.5z" fill="#C5E1A5"/>
+            <ellipse cx="24" cy="27" rx="6.4" ry="7.4" fill="#8D6E63"/>
+            <ellipse cx="22.4" cy="24.8" rx="1.6" ry="2" fill="#FFFFFF" opacity="0.3"/>
+        </symbol>
+        <symbol id="sym-abacaxi" viewBox="0 0 48 48">
+            <path d="M24 15c-8.6 0-14 7.6-14 16.5S15.6 46 24 46s14-6.9 14-14.5S32.6 15 24 15z" fill="#F5A623"/>
+            <path d="M18 22l12 18M30 22L18 40M24 20v24" stroke="#E08E0B" stroke-width="1.6" opacity="0.7"/>
+            <path d="M24 16c-3.5-3-6-7-7-12 4.5.8 8 3.6 10 8zM24 16c3.5-3 6-7 7-12-4.5.8-8 3.6-10 8z" fill="#43A047"/>
+            <path d="M24 15.5c-1.8-4-2.4-8.4-1.6-12.5 2.8 3.8 4 8.2 3.8 12.7z" fill="#5E9E45"/>
+        </symbol>
+        <symbol id="sym-coco" viewBox="0 0 48 48">
+            <path d="M7 27a17 14 0 0 0 34 0z" fill="#6D4C41"/>
+            <path d="M13 32.5c1 4.5 3.2 8 6.5 10.5M34.5 31c-.8 4.6-3 8.3-6.2 10.9" stroke="#4E2A10" stroke-width="1.4" fill="none" opacity="0.55" stroke-linecap="round"/>
+            <ellipse cx="24" cy="27" rx="17" ry="6.5" fill="#8D6E63"/>
+            <ellipse cx="24" cy="27.3" rx="13.2" ry="4.7" fill="#FFFDF7"/>
+        </symbol>
+        <symbol id="sym-tapioca" viewBox="0 0 48 48">
+            <path d="M7 35a17 15 0 0 1 34 0z" fill="#FFF3D6"/>
+            <path d="M7 35h34v2a4 4 0 0 1-4 4H11a4 4 0 0 1-4-4v-2z" fill="#E8CF9B"/>
+            <g fill="#DFC48A"><circle cx="20" cy="27" r="1.4"/><circle cx="28" cy="25" r="1.4"/><circle cx="24" cy="31" r="1.4"/><circle cx="32" cy="31" r="1.3"/><circle cx="15" cy="32" r="1.3"/></g>
+        </symbol>
+        <symbol id="sym-chocolate" viewBox="0 0 48 48">
+            <rect x="8" y="9" width="32" height="31" rx="4" fill="#5D2906"/>
+            <g fill="#8F5A2E"><rect x="11" y="12" width="12" height="7" rx="1.5"/><rect x="25" y="12" width="12" height="7" rx="1.5"/><rect x="11" y="21.5" width="12" height="7" rx="1.5"/><rect x="25" y="21.5" width="12" height="7" rx="1.5"/><rect x="11" y="31" width="12" height="6" rx="1.5"/><rect x="25" y="31" width="12" height="6" rx="1.5"/></g>
+            <path d="M8 40V27l11 13H11a3 3 0 0 1-3-3z" fill="#E8C34A"/>
+        </symbol>
+    </svg>
+
+    <!-- Sabores caindo no fundo -->
+    <div class="falling-fruits" aria-hidden="true">
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:5%;--size:54px;--dur:21s;--delay:-2s;--rot:38deg;--sway:18px;--op:.35"><use href="#sym-morango"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:14%;--size:62px;--dur:25s;--delay:-9s;--rot:-30deg;--sway:-16px;--op:.3"><use href="#sym-abacaxi"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:23%;--size:46px;--dur:19s;--delay:-14s;--rot:45deg;--sway:14px;--op:.35"><use href="#sym-maracuja"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:32%;--size:52px;--dur:23s;--delay:-6s;--rot:-25deg;--sway:-18px;--op:.3"><use href="#sym-coco"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:41%;--size:48px;--dur:20s;--delay:-17s;--rot:30deg;--sway:16px;--op:.33"><use href="#sym-chocolate"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:50%;--size:58px;--dur:26s;--delay:-11s;--rot:-40deg;--sway:-14px;--op:.3"><use href="#sym-abacate"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:59%;--size:50px;--dur:22s;--delay:-3s;--rot:25deg;--sway:18px;--op:.35"><use href="#sym-tapioca"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:68%;--size:44px;--dur:18s;--delay:-15s;--rot:-35deg;--sway:-16px;--op:.3"><use href="#sym-morango"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:77%;--size:56px;--dur:24s;--delay:-7s;--rot:40deg;--sway:14px;--op:.32"><use href="#sym-abacaxi"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:86%;--size:52px;--dur:21s;--delay:-19s;--rot:-28deg;--sway:-18px;--op:.35"><use href="#sym-maracuja"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:94%;--size:46px;--dur:19s;--delay:-12s;--rot:33deg;--sway:16px;--op:.3"><use href="#sym-coco"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:11%;--size:42px;--dur:17s;--delay:-21s;--rot:-22deg;--sway:-14px;--op:.26"><use href="#sym-chocolate"/></svg>
+        <svg class="falling-fruit" viewBox="0 0 48 48" style="--x:72%;--size:46px;--dur:20s;--delay:-24s;--rot:36deg;--sway:18px;--op:.26"><use href="#sym-abacate"/></svg>
+    </div>
 
     <div class="app">
         <!-- Hero Section -->
@@ -45,7 +106,7 @@
         <!-- Flavors Section -->
         <section class="section flavors-section" id="sabores">
             <h2 class="section-title">Nossos Sabores</h2>
-            <p class="section-subtitle">Cada colherada é uma explosão de sabor!</p>
+            <p class="section-subtitle">É uma explosão de sabor!</p>
             <div class="flavors-grid">
                 <div class="flavor-card" data-flavor="leite-ninho">
                     <div class="flavor-card-inner">
