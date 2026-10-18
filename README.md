@@ -1,162 +1,68 @@
-<<<<<<< HEAD
-# Chopp Gourmet
+# chopp-gourmet
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Pix](https://img.shields.io/badge/Pagamento-Pix-008ECC?style=flat-square)
-![GitHub Pages](https://img.shields.io/badge/Hospedagem-GitHub%20Pages-222222?style=flat-square&logo=github&logoColor=white)
-![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=flat-square)
+![linguagem: HTML](https://img.shields.io/badge/linguagem-HTML-blue)   ![status: concluido](https://img.shields.io/badge/status-concluido-green)   ![licenca: MIT](https://img.shields.io/badge/licenca-MIT-blue)
 
-Página única para vender chopp gourmet gelado por R$ 4,00 a unidade, com pagamento via Pix.
+## Resumo
 
-## Problema / Por que existe
+Pagina ou site estatico em HTML, CSS e JavaScript puro, sem dependencias de build. Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
 
-O produtor precisava de uma vitrine simples para vender chopp gourmet congelado em oito sabores, sem carrinho de compras nem checkout complexo. O cliente escolhe o sabor, paga por Pix e recebe o produto.
+## Problema / por que existe
+
+O projeto entrega uma solucao web leve, hospedavel em qualquer servidor estatico (incluindo GitHub Pages), sem exigir servidor de aplicacao, banco de dados ou processo de build.
+
+## Arquitetura
+
+- `index.html`: ponto de entrada e estrutura da pagina.
+- CSS: estilo e layout (modo claro/escuro quando aplicavel).
+- JavaScript: interatividade e logica do lado do cliente.
+
+Tudo vive em um ou poucos arquivos, facil de auditar linha por linha.
+
+## Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript (vanilla)
 
 ## O que faz
 
-- Lista oito sabores: leite ninho, tapioca, chocolate, morango, maracujá, abacate, abacaxi e coco
-- Fixou o preço em R$ 4,00 por unidade
-- Abre um modal com chave Pix, QR code e código Pix Copia e Cola quando o usuário clica em comprar ou em um card de sabor
-- Copia automaticamente o código Pix para a área de transferência ao abrir o modal
-- Anima partículas de gelo no canvas e sabores caindo ao fundo da página
-- Inclina os cards de sabor em 3D ao passar o mouse
-- Mostra uma barra de compra fixa na parte inferior dos celulares
-
-## Stack
-
-| Camada | Tecnologia |
-|--------|------------|
-| Estrutura | HTML5 |
-| Estilo | CSS3 com variáveis, backdrop-filter e grid |
-| Interatividade | JavaScript vanilla, sem frameworks |
-| Ícones | Font Awesome |
-| Fontes | Fredoka e Inter via Google Fonts |
-| QR code | quickchart.io |
-| Hospedagem | GitHub Pages (site estático) |
-
-## Como funciona
-
-O visitante entra na página, vê o preço e os sabores, e clica em "Comprar Agora" ou em um card. O modal de pagamento se abre e copia o código Pix Copia e Cola. O cliente escaneia o QR code ou cola o código no app do banco, paga R$ 4,00 e fecha o modal quando terminar.
-
-1. A página carrega com o canvas de partículas e os sabores caindo ao fundo.
-2. O usuário clica no botão de compra ou em um card de sabor.
-3. O modal se abre e o script copia o payload Pix para a área de transferência.
-4. O cliente escaneia o QR code ou cola o código no app bancário.
-5. Após o pagamento, o usuário fecha o modal e continua navegando.
+Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
 
 ## Como rodar
 
-git clone https://github.com/KelvinOliveiraCode/chopp-gourmet.git
-cd chopp-gourmet
+Abra o arquivo `index.html` diretamente no navegador, ou sirva localmente:
 
-Abra o index.html diretamente no navegador. Em alternativa, sirva com Python:
-
-python -m http.server 8000
-
-Não há dependências para instalar. Fontes e ícones carregam de CDNs, então é preciso estar online para que a página apareça com a identidade visual completa.
+```
+python -m http.server 8080
+# acesse http://localhost:8080
+```
 
 ## Estrutura do projeto
 
-chopp-gourmet/
-├── index.html      # Página única: hero, sabores, sobre, como comprar, modal Pix
-├── style.css       # Estilos, variáveis de cor, animações e responsividade
-├── script.js       # Partículas de gelo, inclinação dos cards, modal Pix, cópia da área de transferência
-├── qrcode-site.png # Imagem de QR code do site
-├── assets/         # Pasta reservada, vazia
-└── .github/
-    └── workflows/  # Workflows de CI/CD
+- .github/ (1 arquivo(s))
+- index.html, qrcode-site.png, README.en.md, README.md, script.js, style.css
+
 
 ## Trade-offs e decisões
 
-Sem framework, usei JavaScript vanilla. Mantém o site leve e sem passo de build. O custo é escrever mais código direto para interações simples.
-
-O pagamento aceita apenas Pix. Evita integrar gateway de cartão, mas restringe quem não usa Pix.
-
-O QR code vem do quickchart.io. Não depende de biblioteca local, mas exige conexão e confia em serviço externo.
-
-O preço está hardcoded. Simples de manter, mas exige editar o código para mudar o valor.
-
-O canvas desenha as partículas. Dá efeito visual sem o peso de vídeo ou imagem grande.
+- Um unico arquivo (ou poucos): facil de hospedar em qualquer lugar e de auditar.
+- Sem build, sem servidor, sem banco de dados.
+- Dados em snapshot (quando aplicavel), nao em tempo real.
 
 ## Limitações conhecidas
 
-Não há backend nem carrinho de compras. A confirmação do pagamento acontece fora do site, no app do banco do cliente.
+- Sem backend; funcionalidade limitada ao navegador.
+- Dados estaticos ou em snapshot; confirme valores em fontes oficiais.
 
-O Pix e o valor estão hardcoded no HTML e no JavaScript.
+## Testes
 
-Fontes e ícones dependem de CDNs externos. Sem internet, a página perde a identidade visual.
-
-O QR code aponta para um payload estático de serviço externo.
-
-Não há modo escuro. A paleta é fixa em tons claros.
+Nenhum teste automatizado detectado.
 
 ## Licença
 
-MIT
+Distribuído sob a licenca MIT. Consulte o arquivo `LICENSE` do repositorio.
 
-## Autor (Kelvin Oliveira — github.com/KelvinOliveiraCode)
-=======
-# Chopp Gourmet — Sorvete em Saquinho
+## Autor
 
-![linguagem: HTML](https://img.shields.io/badge/linguagem-HTML-blue)  
-![status: concluido](https://img.shields.io/badge/status-concluido-green)  
-![licenca: MIT](https://img.shields.io/badge/licenca-MIT-blue)
-
-### Descrição
-Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate. Página simples em HTML.
-
-### O que faz
-Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate. Página simples em HTML.
-
-### Tecnologias
-- HTML5
-
-### Como usar
-Abra o arquivo `index.html` no navegador.
-
-### Estrutura
-Consulte a árvore do repositório para a organização exata de pastas e arquivos.
-
-### Testes
-Não há contagem de testes registrada nesta metadata. Adicione e execute testes apropriados à linguagem (pytest para Python, ./mvnw test para Java, npm test para JavaScript/TypeScript).
-
-### Licença
-MIT
-
-### Autor
-Kelvin Oliveira — github.com/KelvinOliveiraCode
-
----
-
-# Chopp Gourmet — Bagged Ice Cream
-
-![language: HTML](https://img.shields.io/badge/language-HTML-blue)  
-![status: concluido](https://img.shields.io/badge/status-concluido-green)  
-![license: MIT](https://img.shields.io/badge/license-MIT-blue)
-
-### Description
-Chopp Gourmet - Bagged ice cream with chocolate cone. Simple HTML page.
-
-### What it does
-Chopp Gourmet - Bagged ice cream with chocolate cone. Simple HTML page.
-
-### Technologies
-- HTML5
-
-### How to use
-Open `index.html` in the browser.
-
-### Structure
-Check the repository tree for the exact folder and file organization.
-
-### Tests
-No test count recorded in this metadata. Add and run tests appropriate for the language (pytest for Python, ./mvnw test for Java, npm test for JavaScript/TypeScript).
-
-### License
-MIT
-
-### Author
-Kelvin Oliveira — github.com/KelvinOliveiraCode
->>>>>>> 3fdaf2f511646e347e5c3d43603e869a265aea0f
+Kelvin Oliveira, https://github.com/KelvinOliveiraCode
+Portfolio: https://kelvinoliveiracode.github.io/portfolio/
