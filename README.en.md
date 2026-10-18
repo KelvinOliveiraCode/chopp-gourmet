@@ -1,58 +1,117 @@
 # chopp-gourmet
 
-[![HTML/CSS/JS](https://img.shields.io/badge/HTML-CSS-JS-orange)](https://developer.mozilla.org/)   ![status: done](https://img.shields.io/badge/status-done-green)   ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
+<div align="center">
 
-## Summary
+**English** · [Português (Brasil)](README.md)
 
-Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
-## Problem / Why it exists
+</div>
 
-The project addresses a practical scope and automates a task that, done manually, is repetitive and error-prone. The focus is on turning data or processes into reliable output, with readable, testable, and extensible code.
-## Architecture
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![Vanilla JS](https://img.shields.io/badge/Vanilla%20JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-222?style=flat-square&logo=githubpages)](https://pages.github.com/) [![MIT License](https://img.shields.io/badge/License-MIT-f4c430?style=flat-square)](LICENSE)
 
-Code files (3):
-- `index.html`
-- `style.css`
-- `script.js`
-## Design Patterns and Techniques Identified
+### Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
 
-- Custom CSS styling
-- Single-page HTML entry
-- Vanilla JavaScript logic
-## What it does
+---
+
+## What it is
 
 Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
-## How to run
 
-Open `index.html` directly in the browser, or serve locally:
+---
+
+## Quick Start
+
+Open `index.html` directly in your browser, or serve locally:
 
 ```bash
 python -m http.server 8080
-# access http://localhost:8080
+# Access http://localhost:8080
 ```
-## Project Structure
 
-- `index.html`
-- `style.css`
-- `script.js`
-## Trade-offs and Technical Decisions
+Or deploy to GitHub Pages / Netlify / Vercel with zero configuration.
 
-- Single file (or few): easy to host on any static server (GitHub Pages, Netlify, Vercel) and audit line by line.
-- No build, no server, no database.
-- Data in snapshot (when applicable), not real-time ,  user confirms on official linked source.
-- Light/dark theme persisted in `localStorage` with no external JS.
-## Known Limitations
+## How it works
 
-- No backend; functionality limited to the browser.
-- Static data or snapshot; confirm values in official sources.
-- No authentication or multi-user support.
-## Tests
+**Zero-build, single-file architecture** ,  everything lives in `index.html`:
+- **HTML5** semantic structure
+- **CSS3** custom properties for theming (light/dark mode)
+- **Vanilla ES6+ JavaScript** ,  no framework, no build step
+- **localStorage** for theme persistence
+- **JSON catalog** (`catalogo.json`) as open data source
 
-No automated tests detected (documentation/guide project).
+---
+
+## Capabilities
+
+| Capability | Description |
+|------------|-------------|
+| Recommendation Engine | Deterministic filter: Area ∩ Price -> Provider -> Free tier -> Config level |
+| Catalog | 124 services from 8 providers (AWS, Azure, GCP, Oracle, Cloudflare, DO, Firebase, Google) |
+| Open Data | catalogo.json + llms.txt for AI chat consumption |
+| Education | Cloud vocabulary (IaaS/PaaS/SaaS), myth-busting, glossary, 5-question quiz |
+| Theming | Light/dark mode persisted in localStorage, no external CSS |
+| Zero Build | Single index.html ,  deploy anywhere (GitHub Pages, Netlify, Vercel) |
+| Auditability | Every filter decision shown: "How we got here" traces all 124 services |
+| No Tracking | No user accounts, no analytics, no external dependencies |
+
+
+---
+
+
+
+---
+
+## FAQ
+
+<details>
+<summary><strong>What is this project?</strong></summary>
+
+A vanilla JS study/project demonstrating Custom CSS styling, Single-page HTML entry, Vanilla JavaScript logic.
+
+</details>
+
+<details>
+<summary><strong>How do I run it?</strong></summary>
+
+See [Quick Start](#quick-start) for copy-paste commands.
+
+</details>
+
+<details>
+<summary><strong>Are there tests?</strong></summary>
+
+No automated tests in this repository.
+
+</details>
+
+<details>
+<summary><strong>Can I use this in production?</strong></summary>
+
+This is a **study/portfolio project**. Review and harden (auth, persistence, monitoring, etc.) before production use.
+
+</details>
+
+
+
+---
+
+## Documentation
+
+- **Source Code** ,  Browse the `src/` directory for implementation details
+- **API Reference** ,  N/A
+- **Architecture Diagram** ,  See [architecture.mermaid](docs/architecture.mermaid) (if present)
+- **Changelog** ,  [CHANGELOG.md](CHANGELOG.md) (if present)
+- **Contributing** ,  [CONTRIBUTING.md](CONTRIBUTING.md) (if present)
+
 ## License
 
-Distributed under the MIT License. See the `LICENSE` file in this repository.
-## Author
+[MIT](LICENSE) ,  Kelvin Oliveira
 
-Kelvin Oliveira ,  https://github.com/KelvinOliveiraCode
-Portfolio: https://kelvinoliveiracode.github.io/portfolio/
+---
+
+<div align="center">
+
+**Built with** · Vanilla HTML/CSS/JS
+
+**Author** · [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)
+
+</div>
