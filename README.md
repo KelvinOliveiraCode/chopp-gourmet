@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**English** · [Português (Brasil)](README.md)
+[English](README.en.md) · **Português (Brasil)**
 
 </div>
 
@@ -18,25 +18,25 @@ Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
 
 ---
 
-## Quick Start
+## Início Rápido
 
-Open `index.html` directly in your browser, or serve locally:
+Abra `index.html` diretamente no navegador, ou sirva localmente:
 
 ```bash
 python -m http.server 8080
-# Access http://localhost:8080
+# Acesse http://localhost:8080
 ```
 
-Or deploy to GitHub Pages / Netlify / Vercel with zero configuration.
+Ou faça deploy no GitHub Pages / Netlify / Vercel com configuração zero.
 
 ## Como funciona
 
-**Zero-build, single-file architecture** ,  everything lives in `index.html`:
-- **HTML5** semantic structure
-- **CSS3** custom properties for theming (light/dark mode)
-- **Vanilla ES6+ JavaScript** ,  no framework, no build step
-- **localStorage** for theme persistence
-- **JSON catalog** (`catalogo.json`) as open data source
+**Arquitetura zero-build, arquivo único** ,  tudo vive em `index.html`:
+- **HTML5** estrutura semântica
+- **CSS3** propriedades customizadas para tema (claro/escuro)
+- **Vanilla ES6+ JavaScript** ,  sem framework, sem build
+- **localStorage** para persistência de tema
+- **Catálogo JSON** (`catalogo.json`) como fonte de dados aberta
 
 ---
 

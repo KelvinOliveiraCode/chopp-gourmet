@@ -31,12 +31,12 @@ Or deploy to GitHub Pages / Netlify / Vercel with zero configuration.
 
 ## How it works
 
-**Zero-build, single-file architecture** ,  everything lives in `index.html`:
-- **HTML5** semantic structure
-- **CSS3** custom properties for theming (light/dark mode)
-- **Vanilla ES6+ JavaScript** ,  no framework, no build step
-- **localStorage** for theme persistence
-- **JSON catalog** (`catalogo.json`) as open data source
+**Arquitetura zero-build, arquivo único** ,  tudo vive em `index.html`:
+- **HTML5** estrutura semântica
+- **CSS3** propriedades customizadas para tema (claro/escuro)
+- **Vanilla ES6+ JavaScript** ,  sem framework, sem build
+- **localStorage** para persistência de tema
+- **Catálogo JSON** (`catalogo.json`) como fonte de dados aberta
 
 ---
 
