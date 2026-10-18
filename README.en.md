@@ -42,16 +42,16 @@ Or deploy to GitHub Pages / Netlify / Vercel with zero configuration.
 
 ## Capabilities
 
-| Capability | Description |
+| Capacidade | Descrição |
 |------------|-------------|
-| Recommendation Engine | Deterministic filter: Area ∩ Price -> Provider -> Free tier -> Config level |
-| Catalog | 124 services from 8 providers (AWS, Azure, GCP, Oracle, Cloudflare, DO, Firebase, Google) |
-| Open Data | catalogo.json + llms.txt for AI chat consumption |
-| Education | Cloud vocabulary (IaaS/PaaS/SaaS), myth-busting, glossary, 5-question quiz |
-| Theming | Light/dark mode persisted in localStorage, no external CSS |
-| Zero Build | Single index.html ,  deploy anywhere (GitHub Pages, Netlify, Vercel) |
-| Auditability | Every filter decision shown: "How we got here" traces all 124 services |
-| No Tracking | No user accounts, no analytics, no external dependencies |
+| Motor de Recomendação | Filtro determinístico: Área ∩ Preço -> Provedor -> Tier gratuito -> Nível de config |
+| Catálogo | 124 serviços de 8 provedores (AWS, Azure, GCP, Oracle, Cloudflare, DO, Firebase, Google) |
+| Dados Abertos | catalogo.json + llms.txt para consumo por chat de IA |
+| Educação | Vocabulário de nuvem (IaaS/PaaS/SaaS), myth-busting, glossário, quiz de 5 perguntas |
+| Tematização | Modo claro/escuro persistido em localStorage, sem CSS externo |
+| Zero Build | index.html único ,  deploy em qualquer lugar (GitHub Pages, Netlify, Vercel) |
+| Auditoria | Cada decisão do filtro exibida: "Como chegamos aqui" rastreia todos 124 serviços |
+| Sem Rastreamento | Sem contas de usuário, sem analytics, sem dependências externas |
 
 
 ---
