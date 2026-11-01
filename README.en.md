@@ -1,117 +1,94 @@
 # chopp-gourmet
 
-<div align="center">
-
 **English** · [Português (Brasil)](README.md)
 
-</div>
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![Vanilla JS](https://img.shields.io/badge/Vanilla%20JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-222?style=flat-square&logo=githubpages)](https://pages.github.com/) [![MIT License](https://img.shields.io/badge/License-MIT-f4c430?style=flat-square)](LICENSE)
-
-### Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
-
----
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=flat-square&logo=githubpages)](#)
 
 ## What it is
 
-Chopp Gourmet - Sorvete em saquinho com casquinha de chocolate
+**A sales landing page for Chopp Gourmet** — a frozen dessert sold per unit (BRL 4.00) with **Pix payment embedded** in the page. A static site (HTML + CSS + JS), no backend, no database.
 
----
+## Status
 
-## Quick Start
+Working and ready to use: catalog landing page, Pix payment modal (QR code + copy-paste), and automatic deploy on GitHub Pages via `pages.yml`.
 
-Open `index.html` directly in your browser, or serve locally:
+## Features
 
-```bash
-python -m http.server 8080
-# Access http://localhost:8080
+- **Flavor catalog**: 8 flavors (Leite Ninho, Tapioca, Chocolate, Morango, Maracujá, Abacate, Abacaxi, Coco), each BRL 4.00.
+- **Pix payment modal**: QR Code, pix-addressing in copy-and-paste form and a "Copy" button — it copies the Pix copy/paste payload automatically when the modal opens.
+- **Visual effects**: snow particle system (canvas), 3D tilt on the flavor cards, scroll-triggered entrance animations with `IntersectionObserver`, and a title animation.
+- **Keyboard accessibility**: `Escape` closes the modal.
+- **Deploy on GitHub Pages**: `pages.yml` workflow (Pages + upload artifact + deploy).
+
+## Architecture
+
+A single page split into three files. `script.js` organizes the effects into independent classes (`SnowSystem`, `TiltEffect`, `ScrollAnimation`, `ModalManager`, etc.) and initialises them on `DOMContentLoaded`.
+
+```mermaid
+flowchart LR
+    index.html --> style.css
+    index.html --> script.js
+    script.js --> SnowSystem
+    script.js --> TiltEffect
+    script.js --> ScrollAnimation
+    script.js --> ModalManager[ModalManager - Pix]
+    ModalManager --> QR[pix data in the DOM]
+    GH[pages.yml - GitHub Actions] --> PAGES[GitHub Pages]
 ```
 
-Or deploy to GitHub Pages / Netlify / Vercel with zero configuration.
+## Stack
 
-## How it works
+- HTML5 + CSS3 + JavaScript (vanilla, Canvas API)
+- GitHub Pages (deploy) · GitHub Actions (`pages.yml`)
 
-**Arquitetura zero-build, arquivo único** ,  tudo vive em `index.html`:
-- **HTML5** estrutura semântica
-- **CSS3** propriedades customizadas para tema (claro/escuro)
-- **Vanilla ES6+ JavaScript** ,  sem framework, sem build
-- **localStorage** para persistência de tema
-- **Catálogo JSON** (`catalogo.json`) como fonte de dados aberta
+## Repository layout
 
----
+```
+chopp-gourmet/
+├── index.html      # landing page (catalog + Pix modal)
+├── script.js       # effects and modal logic (classes)
+├── style.css       # styling and theme
+├── qrcode-site.png # QR code image (reference)
+└── .github/workflows/pages.yml
+```
 
-## Capabilities
+## Prerequisites and installation
 
-| Capacidade | Descrição |
-|------------|-------------|
-| Motor de Recomendação | Filtro determinístico: Área ∩ Preço -> Provedor -> Tier gratuito -> Nível de config |
-| Catálogo | 124 serviços de 8 provedores (AWS, Azure, GCP, Oracle, Cloudflare, DO, Firebase, Google) |
-| Dados Abertos | catalogo.json + llms.txt para consumo por chat de IA |
-| Educação | Vocabulário de nuvem (IaaS/PaaS/SaaS), myth-busting, glossário, quiz de 5 perguntas |
-| Tematização | Modo claro/escuro persistido em localStorage, sem CSS externo |
-| Zero Build | index.html único ,  deploy em qualquer lugar (GitHub Pages, Netlify, Vercel) |
-| Auditoria | Cada decisão do filtro exibida: "Como chegamos aqui" rastreia todos 124 serviços |
-| Sem Rastreamento | Sem contas de usuário, sem analytics, sem dependências externas |
+None. Just open the page.
 
+## How to run
 
----
+Open locally or publish on GitHub Pages:
 
+```bash
+# local
+start index.html
+# or serve with a local server
+python -m http.server 8000
+```
 
+The deploying account is `KelvinOliveiraCode`; the workflow publishes the site to Pages on every push to `main`.
 
----
+## Tests and quality
 
-## FAQ
+A static site with no automated tests. Loading does not depend on the network (no CDN), so the page opens offline.
 
-<details>
-<summary><strong>What is this project?</strong></summary>
+## Technical decisions and trade-offs
 
-A vanilla JS study/project demonstrating Custom CSS styling, Single-page HTML entry, Vanilla JavaScript logic.
+- **Backend-less static site**: zero hosting cost (Pages) and fast load; in exchange, the payment is manual (the user copies the Pix) — there is no real payment gateway.
+- **Pix key and QR embedded in the DOM/JS**: simple; in exchange, changing the key means editing the code and redeploying.
+- **Canvas/CSS effects**: light and dependency-free; in exchange, extra image-like animation in some browsers.
 
-</details>
+## Known limitations and roadmap
 
-<details>
-<summary><strong>How do I run it?</strong></summary>
+- Payment is not automated (no transfer confirmation on the page).
+- Pix key fixed in code (`582cc87e-...`).
+- No external catalog or checkout integration.
 
-See [Quick Start](#quick-start) for copy-paste commands.
+## Development process
 
-</details>
+An individual project by Kelvin Oliveira, built with orchestrated AI agents and reviewed by the author. The design and the review are the author's.
 
-<details>
-<summary><strong>Are there tests?</strong></summary>
+## License and author
 
-No automated tests in this repository.
-
-</details>
-
-<details>
-<summary><strong>Can I use this in production?</strong></summary>
-
-This is a **study/portfolio project**. Review and harden (auth, persistence, monitoring, etc.) before production use.
-
-</details>
-
-
-
----
-
-## Documentation
-
-- **Source Code** ,  Browse the `src/` directory for implementation details
-- **API Reference** ,  N/A
-- **Architecture Diagram** ,  See [architecture.mermaid](docs/architecture.mermaid) (if present)
-- **Changelog** ,  [CHANGELOG.md](CHANGELOG.md) (if present)
-- **Contributing** ,  [CONTRIBUTING.md](CONTRIBUTING.md) (if present)
-
-## License
-
-[MIT](LICENSE) ,  Kelvin Oliveira
-
----
-
-<div align="center">
-
-**Built with** · Vanilla HTML/CSS/JS
-
-**Author** · [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)
-
-</div>
+**Author**: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)
